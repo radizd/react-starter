@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const Index = () => {
-  return <div>Hello React!</div>;
-};
+import { AppRouter } from "./app";
 
-ReactDOM.render(<Index />, document.getElementById("index"));
+ReactDOM.render(<AppRouter />, document.getElementById("index"));
