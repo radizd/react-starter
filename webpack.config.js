@@ -6,19 +6,26 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = {
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: "babel-loader"
-          }
+  entry: {
+    core: './src/index.js'
+  },
+  output: {
+    filename: '[name].[hash].js',
+    chunkFilename: '[name].[hash].js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
         }
-      ]
-    },
-    plugins: [htmlPlugin],
-    devServer: {
-      historyApiFallback: true,
-    }
-  };
+      }
+    ]
+  },
+  plugins: [htmlPlugin],
+  devServer: {
+    historyApiFallback: true,
+  }
+};
